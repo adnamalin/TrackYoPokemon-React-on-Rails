@@ -6,4 +6,4 @@
         className: 'progress-bar'
         role: 'progressbar'
         style: progressBarStyle = width: "#{ @props.percent }%"
-        @props.percent
+        @props.percent + '%'

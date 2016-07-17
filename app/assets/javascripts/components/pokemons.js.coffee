@@ -51,10 +51,11 @@
         React.createElement AmountBox, type: 'success', cp: @caughtPokedex(), text: 'Pokemon Caught'
         React.createElement AmountBox, type: 'danger', cp: @uncaughtPokedex(), text: 'Pokemon Left to Catch'
         React.createElement AmountBox, type: 'info', cp: @totalCP(), text: 'Total Combat Points'
+      React.DOM.p(null, 'PokeProgress:')
+      React.createElement ProgressBar, percent: @percentage()
       React.createElement PokemonForm, handleNewPokemon: @addPokemon
         # get the json of the new pokemon from the form and then runns its won addPokemon method
       React.DOM.br(null )
-      React.createElement ProgressBar, percent: @percentage()
       React.DOM.table
         className: 'table table-bordered'
         React.DOM.thead null,
