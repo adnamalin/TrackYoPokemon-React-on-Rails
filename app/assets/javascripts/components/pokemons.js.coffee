@@ -18,14 +18,40 @@
       pokemons.push pokemon
       @setState pokemons: pokemons
 
+  caughtPokedex: ->
+    @state.pokemons.length
+
+  uncaughtPokedex: ->
+    133 - @caughtPokedex()
+
+  plusCP: ->
+    postive = @state.pokemons.filter (val) -> val.cp >= 0
+    postive.reduce ((prev, curr) ->
+      prev + parseFloat(curr.cp)
+    ), 0
+
+  minusCP: ->
+      negative = @state.pokemons.filter (val) -> val.cp < 0
+      negative.reduce ((prev, curr) ->
+        prev + parseFloat(curr.cp)
+      ), 0
+
+  totalCP: ->
+    @plusCP() + @minusCP()
+
   render: ->
     React.DOM.div
       className: 'pokemons'
       React.DOM.h2
         className: 'title'
         'All Yo Pokemon'
+      React.DOM.div
+        className: 'row'
+        React.createElement AmountBox, type: 'success', cp: @caughtPokedex(), text: 'Pokemon Caught'
+        React.createElement AmountBox, type: 'success', cp: @uncaughtPokedex(), text: 'Pokemon Left to Catch'
+        React.createElement AmountBox, type: 'success', cp: @totalCP(), text: 'Total Combat Points'
       React.createElement PokemonForm, handleNewPokemon: @addPokemon
-      # get the json of the new pokemon from the form and then runns its won addPokemon method
+        # get the json of the new pokemon from the form and then runns its won addPokemon method
       React.DOM.table
         className: 'table table-bordered'
         React.DOM.thead null,
