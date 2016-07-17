@@ -18,7 +18,7 @@
         className: 'title'
         'All Pokemon'
       React.DOM.table
-        className: 'table'
+        className: 'table table-bordered'
         React.DOM.thead null,
           React.DOM.tr null,
             React.DOM.th null, 'Date'
