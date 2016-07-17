@@ -9,14 +9,23 @@
 @Pokemons = React.createClass
   getInitialState: ->
     pokemons: @props.data
+
   getDefaultProps: ->
     pokemons: []
+
+  addPokemon: (pokemon) ->
+      pokemons = @state.pokemons.slice()
+      pokemons.push pokemon
+      @setState pokemons: pokemons
+
   render: ->
     React.DOM.div
       className: 'pokemons'
       React.DOM.h2
         className: 'title'
-        'All Pokemon'
+        'All Yo Pokemon'
+      React.createElement PokemonForm, handleNewPokemon: @addPokemon
+      # get the json of the new pokemon from the form and then runns its won addPokemon method
       React.DOM.table
         className: 'table table-bordered'
         React.DOM.thead null,
