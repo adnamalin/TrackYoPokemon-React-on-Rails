@@ -37,6 +37,9 @@
   totalCP: ->
     @plusCP() + @minusCP()
 
+  percentage: ->
+    Number(Math.round((@caughtPokedex()/@uncaughtPokedex())*100)).toLocaleString()
+
   render: ->
     React.DOM.div
       className: 'pokemons'
@@ -46,10 +49,12 @@
       React.DOM.div
         className: 'row'
         React.createElement AmountBox, type: 'success', cp: @caughtPokedex(), text: 'Pokemon Caught'
-        React.createElement AmountBox, type: 'success', cp: @uncaughtPokedex(), text: 'Pokemon Left to Catch'
-        React.createElement AmountBox, type: 'success', cp: @totalCP(), text: 'Total Combat Points'
+        React.createElement AmountBox, type: 'danger', cp: @uncaughtPokedex(), text: 'Pokemon Left to Catch'
+        React.createElement AmountBox, type: 'info', cp: @totalCP(), text: 'Total Combat Points'
       React.createElement PokemonForm, handleNewPokemon: @addPokemon
         # get the json of the new pokemon from the form and then runns its won addPokemon method
+      React.DOM.br(null )
+      React.createElement ProgressBar, percent: @percentage()
       React.DOM.table
         className: 'table table-bordered'
         React.DOM.thead null,
