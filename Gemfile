@@ -31,6 +31,10 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'react-rails'
 gem 'bootstrap-sass', '~> 3.3.6'
+# gem 'will_paginate', '~> 3.0.5'
+
+# Use HTTParty to make API get requests
+gem 'httparty'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
