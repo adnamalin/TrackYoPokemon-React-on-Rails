@@ -1,2 +1,5 @@
 @combatPointsFormat = (combatPoints) ->
-   'Combat Points:' + Number(combatPoints).toLocaleString()
+   Number(combatPoints).toLocaleString()
+
+# @percentFormat = (percentRaw) ->
+#   Number(combatPoints).toLocaleString() + "%"
