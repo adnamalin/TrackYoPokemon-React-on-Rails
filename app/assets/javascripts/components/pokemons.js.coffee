@@ -18,6 +18,12 @@
       pokemons.push pokemon
       @setState pokemons: pokemons
 
+  deletePokemon: (pokemon) ->
+      pokemons = @state.pokemons.slice()
+      index = pokemons.indexOf pokemon
+      pokemons.splice index, 1
+      @replaceState pokemons: pokemons
+
   caughtPokedex: ->
     @state.pokemons.length
 
@@ -59,9 +65,10 @@
             React.DOM.th null, 'Date'
             React.DOM.th null, 'Name'
             React.DOM.th null, 'Combat Points'
+            React.DOM.th null, 'Actions'
         React.DOM.tbody null,
           for pokemon in @state.pokemons
-            React.createElement Pokemon, key: pokemon.id, pokemon: pokemon
+            React.createElement Pokemon, key: pokemon.id, pokemon: pokemon, handleDeletePokemon: @deletePokemon
 
 
 #Another way to instantiate ReactComponents inside the render method is through JSX syntax. The following snippet is equivalent to the previous one:
