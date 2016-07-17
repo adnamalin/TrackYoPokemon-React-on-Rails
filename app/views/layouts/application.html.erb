@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Accounts</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>Pokemon!</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <%= link_to image_tag("pokemongologo.png",  class: "logo", size: "60x30"), root_path, class: 'navbar-brand', style: 'margin-bottom:5px;margin-top:0;' %>
+        </a>
+      </div>
+    </div>
+  </nav>
+  <%= yield %>
+</body>
 </html>

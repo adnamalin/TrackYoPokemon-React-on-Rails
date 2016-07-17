@@ -1,11 +1,3 @@
-# @Pokemons = React.createClass
-#   render: ->
-#     React.DOM.div
-#       classNAME: 'pokemons'
-#       React.DOM.h2
-#         classNAME: 'name'
-#         'Pokemon'
-
 @Pokemons = React.createClass
   getInitialState: ->
     pokemons: @props.data
