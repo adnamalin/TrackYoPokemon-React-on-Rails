@@ -7,3 +7,19 @@
 // .progress-bar {
 //   width: 60%;
 // }
+
+.result-panel {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-inline {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sort-buttons {
+  display: flex;
+  justify-content: space-around;;
+  margin-bottom: 20px;
+}
