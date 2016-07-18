@@ -9,7 +9,6 @@ class PokemonAPI
   def search(pokemon_name)
     cleaned_search = sanitize_search_term(pokemon_name)
     response = HTTParty.get("#{@base_url}/pokemon/#{cleaned_search}")
-    p response
     return_basic_info(response)
   end
 
@@ -51,6 +50,3 @@ class PokemonAPI
   end
 
 end
-
-api = PokemonAPI.new
-api.search("dfe")

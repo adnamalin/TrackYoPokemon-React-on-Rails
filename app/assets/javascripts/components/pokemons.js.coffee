@@ -84,7 +84,7 @@
         className: 'row'
         React.createElement AmountBox, type: 'success', cp: @caughtPokedex(), text: 'Pokemon Caught'
         React.createElement AmountBox, type: 'danger', cp: @uncaughtPokedex(), text: 'Pokemon Left to Catch'
-        React.createElement AmountBox, type: 'info', cp: @totalCP(), text: 'Total Combat Points'
+        React.createElement AmountBox, type: 'info', cp: @totalCP() + "..this doesn't even make sense to have", text: 'Total Combat Points'
       React.DOM.p(null, 'PokeProgress:')
       React.createElement ProgressBar, percent: @percentage()
       React.createElement PokemonForm, handleNewPokemon: @addPokemon
