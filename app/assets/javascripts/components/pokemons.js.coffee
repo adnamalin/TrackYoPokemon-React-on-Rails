@@ -100,13 +100,13 @@
         React.DOM.a
           className: 'btn btn-xs'
           style: progressBarStyle = backgroundColor: "lightgray", color: "white"
-          onClick: @sortCp
-          'Sort By Combat Points'
+          onClick: @sortName
+          'Sort By Name'
         React.DOM.a
           className: 'btn btn-xs'
           style: progressBarStyle = backgroundColor: "lightgray", color: "white"
-          onClick: @sortName
-          'Sort By Name'
+          onClick: @sortCp
+          'Sort By Combat Points'
       React.DOM.table
         className: 'table table-bordered table-hover'
         React.DOM.thead null,
