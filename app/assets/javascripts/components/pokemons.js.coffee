@@ -57,7 +57,7 @@
         # get the json of the new pokemon from the form and then runns its won addPokemon method
       React.DOM.br(null )
       React.DOM.table
-        className: 'table table-bordered'
+        className: 'table table-bordered table-hover'
         React.DOM.thead null,
           React.DOM.tr null,
             React.DOM.th null, 'Date'
