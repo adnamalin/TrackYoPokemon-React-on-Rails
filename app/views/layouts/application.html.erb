@@ -18,9 +18,11 @@
         <%= link_to image_tag("pokemongologo.png",  class: "logo", size: "60x30"), root_path, class: 'navbar-brand', style: 'margin-bottom:5px;margin-top:0;' %>
         <%= link_to 'TrackYoPokeMon', root_path, class: 'navbar-brand brand-name', style: "margin-bottom:0px;margin-top:5px;color:#d43830;"%>
       </div>
-      <form class="navbar-form navbar-right" role="search">
+      <form action='/search' method="POST" class="navbar-form navbar-right" role="search">
+        <input name="utf8" type="hidden" value="✓">
+        <input type="hidden" name="authenticity_token" value="tCI9cP01ooYp7Xkuv3MlUze2QtkM+yiymUrv8HcWS3kXtEaa2QVsHkGe0h+ekoqOtuFHnfZJFMdQElsmY9iwPQ==">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
+          <input type="text" class="form-control" placeholder="Search" name="search[search_term]">
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
