@@ -14,4 +14,4 @@
     React.DOM.div
       className: 'row'
       for result in @state.results
-        React.createElement Result, type: 'primary', species: result.species, weight: result.weight, image: result.image ,text: result.name
+        React.createElement Result, type: 'primary', species: result.species, weight: result.weight, image: result.image ,abilities: result.abilities, types: result.types, text: result.name
