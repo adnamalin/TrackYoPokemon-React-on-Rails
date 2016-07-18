@@ -7,7 +7,7 @@
 
   addPokemon: (pokemon) ->
       pokemons = @state.pokemons.slice()
-      pokemons.push pokemon
+      pokemons.unshift pokemon
       @setState pokemons: pokemons
 
   deletePokemon: (pokemon) ->
