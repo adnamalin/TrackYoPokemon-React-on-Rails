@@ -10,6 +10,7 @@ I also incorporated search functionality with PokeAPI so you can look up pokemon
 
 ##Tech Stack
 * React
+* JS/Coffeescript
 * Ruby on Rails
 * Bootstrap 
 
